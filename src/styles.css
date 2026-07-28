@@ -52,7 +52,7 @@ body{
   z-index: 0;
   background:
     linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.22)),
-    url("../images/image1.jpg") center / cover no-repeat;
+    url("./assets/images/image1.jpg") center / cover no-repeat;
   border-radius: 0px; /* remove rounded corners */
 }
 
@@ -233,7 +233,7 @@ body{
   height:190px; border-radius:22px; background:#ddd3c6; display:grid; place-items:center; margin-bottom:12px;
   background:
     linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.22)),
-    url("../images/church.jpg") center / cover no-repeat;
+    url("./assets/images/church.jpg") center / cover no-repeat;
 }
 
 /* Venue */
@@ -241,7 +241,7 @@ body{
   height:300px; border-radius:22px; background:#ddd3c6; display:grid; place-items:center; margin-bottom:12px;
   background:
     linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.22)),
-    url("../images/reception.jpg") center / cover no-repeat;
+    url("./assets/images/reception.jpg") center / cover no-repeat;
 }
 .venue-name{font-weight:700; letter-spacing:.06em; margin:0;}
 .venue-loc{margin:0 0 14px; letter-spacing:.06em; text-transform:uppercase;}
