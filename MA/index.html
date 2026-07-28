@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mobile-first single-page wedding invitation" />
+  <title>Mark & Alexia | Wedding Invitation</title>
+   <!-- Favicon / tab logo -->
+  <link rel="icon" type="image/png" sizes="600x400" href="./assets/images/favicon.png" />
+  <link rel="apple-touch-icon" href="./assets/images/favicon.png" />
+
+  <!-- Elegant typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Allura&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <!-- Intro -->
+  <section class="intro" id="intro" aria-label="Invitation intro">
+    <div class="envelope-wrap">
+      <p class="eyebrow">You are warmly invited</p>
+
+      <div class="envelope" aria-hidden="true">
+        <div class="envelope-base"></div>
+        <div class="letter">Open to reveal invitation</div>
+        <div class="envelope-lid"></div>
+        <div class="seal">M • A</div>
+      </div>
+
+      <h1 class="intro-title">Wedding Invitation</h1>
+      <p class="intro-subtitle">Tap below to open our invitation</p>
+      <button class="open-btn" id="openInviteBtn" type="button">Open Invitation</button>
+    </div>
+  </section>
+
+  <main class="site" id="site">
+    <!-- Fixed texture/parallax bg -->
+    
+    <!-- HERO -->
+    <header class="hero parallax-layer" data-parallax-speed="1.18" id="home">
+      <!-- NEW: background layer -->
+      <div class="hero-bg"></div>
+      <p class="music-note">♪ Tap to play music</p>
+      <p class="eyebrow">Saturday • November 28, 2026 • 2:00 PM</p>
+      <h1 class="couple-names">Mark <span>&</span> Alexia</h1>
+      <p class="script-line">are getting married</p>
+
+      <p class="hero-copy">
+        With grateful hearts, we invite you to witness and celebrate
+        the union of our lives.
+      </p>
+
+      <div class="countdown hero-countdown" id="countdown">
+        <div class="time-box"><div class="num" id="days">0</div><div class="label">Days</div></div>
+        <div class="time-box"><div class="num" id="hours">00</div><div class="label">Hours</div></div>
+        <div class="time-box"><div class="num" id="mins">00</div><div class="label">Minutes</div></div>
+        <div class="time-box"><div class="num" id="secs">00</div><div class="label">Seconds</div></div>
+      </div>
+
+      <a class="scroll-down" href="#invitation">Scroll Down ↓</a>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <section class="sections">
+      <!--<article class="card parallax-layer" data-parallax-speed="0.08" id="invitation">
+        <h2>Invitation</h2>
+        <p><strong>Date:</strong> November 28, 2026</p>
+        <p><strong>Time:</strong> 2:00 PM</p>
+        <p><strong>Ceremony:</strong> San Antonio De Padua, Silang Cavite</p>
+      </article>-->
+
+      <article class="card parallax-layer" data-parallax-speed="0.06" id="our-story">
+        <h2>Our Story</h2>
+        <p class="muted">A glimpse of moments that led us here.</p>
+        <div class="placeholder-grid">
+          <div class="ph">Photo Placeholder</div>
+          <div class="ph">Photo Placeholder</div>
+          <div class="ph">Photo Placeholder</div>
+        </div>
+      </article> 
+
+      <article class="card venue-card parallax-layer" data-parallax-speed="0.07" id="wedding-details">
+        <h2>Ceremony</h2>
+        <div class="venue-church"></div>
+        <p class="venue-name">San Antonio De Padua, Silang Cavite</p>
+        <p class="venue-loc">Silang Cavite, Philippines</p>
+        <button class="map-btn" type="button">View Map</button>
+
+        <h2>Reception</h2>
+        <div class="venue-reception"></div>
+        <p class="venue-name">FarmHills Garden</p>
+        <p class="venue-loc">Silang Cavite, Philippines</p>
+        <button class="map-btn" type="button">View Map</button>
+      </article>
+
+      <article class="card venue-card parallax-layer" data-parallax-speed="0.07" id="wedding-sdt">
+        <h2>Save the date video</h2>
+        <div class="video-wrap">
+          <!-- YouTube embed -->
+          <iframe width="1013" height="570"
+           src="https://www.youtube.com/embed/SIWjIBOb6-I?list=RDSIWjIBOb6-I" 
+           title="Eran &amp; Jessa PreWedding Video in Mt. Gulugod Baboy, Batangas" 
+           frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+        </div>
+      </article>
+
+      <article class="card parallax-layer" data-parallax-speed="0.06" id="attire">
+        <h2>Dress Code</h2>
+        <p class="muted">Formal attire. We kindly encourage neutral and elegant tones.</p>
+
+        <div class="attire-icons">
+          <div class="ph">Suit Illustration</div>
+          <div class="ph">Gown Illustration</div>
+        </div>
+
+        <div class="swatches" aria-label="Color palette swatches">
+          <span class="swatch sage" title="Sage Green"></span>
+          <span class="swatch champagne" title="Champagne"></span>
+          <span class="swatch burgundy" title="Burgundy"></span>
+          <span class="swatch ivory" title="Ivory"></span>
+        </div>
+      </article>
+
+      <article class="card parallax-layer" data-parallax-speed="0.06" id="program-flow">
+        <h2>The Program</h2>
+        <div class="program-grid">
+          <div class="program-box"><strong>1:30 PM</strong><span>Guest Arrival</span></div>
+          <div class="program-box"><strong>2 PM</strong><span>Wedding Ceremony</span></div>
+          <div class="program-box"><strong>5 PM</strong><span>Photo Session</span></div>
+          <div class="program-box"><strong>6 PM</strong><span>Reception Program</span></div>
+          <div class="program-box"><strong>7 PM</strong><span>Dinner</span></div>
+          <div class="program-box"><strong>8 PM</strong><span>Speeches & Cake</span></div>
+          <div class="program-box"><strong>9 PM</strong><span>Farewell</span></div>
+          <div class="program-box"><strong>10 PM</strong><span>End of Program</span></div>
+        </div>
+      </article>
+
+      <article class="card parallax-layer" data-parallax-speed="0.05" id="entourage">
+        <h2>Entourage</h2>
+        <p class="muted">Our principal sponsors, family, and wedding party.</p>
+        <div class="placeholder-grid">
+          <div class="ph">Bridesmaids</div>
+          <div class="ph">Groomsmen</div>
+          <div class="ph">Sponsors</div>
+          <div class="ph">Family</div>
+        </div>
+      </article>
+
+      <!-- NEW RSVP COLUMN -->
+      <article class="card parallax-layer" data-parallax-speed="0.05" id="rsvp">
+        <h2>RSVP</h2>
+        <p class="muted">Please confirm your attendance on or before November 1, 2026.</p>
+
+        <form class="rsvp-form">
+          <label>
+            Full Name
+            <input type="text" placeholder="Your full name" />
+          </label>
+
+          <label>
+            Will you attend?
+            <select>
+              <option>Joyfully Accepts</option>
+              <option>Regretfully Declines</option>
+            </select>
+          </label>
+
+          <label>
+            Number of Guests
+            <input type="number" min="1" max="5" value="1" />
+          </label>
+
+          <label>
+            Message for the couple
+            <textarea rows="3" placeholder="Write a short message"></textarea>
+          </label>
+
+          <button type="button" class="submit-btn">Submit RSVP</button>
+        </form>
+      </article>
+
+      <article class="card parallax-layer" data-parallax-speed="0.05" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <details class="faq-item">
+          <summary>Can I bring a plus one?</summary>
+          <p>Please refer to your RSVP invitation details.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is parking available?</summary>
+          <p>Parking details will be shared with your final invite guide.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I take photos during the ceremony?</summary>
+          <p>We’ll share our ceremony photo guidelines here.</p>
+        </details>
+      </article>
+    </section>
+
+    <footer class="footer">Made with love • Mark & Alexia • 2026</footer>
+  </main>
+
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>
