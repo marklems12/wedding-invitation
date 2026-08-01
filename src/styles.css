@@ -114,10 +114,20 @@ body{
   transition:opacity .6s ease,visibility .6s ease;
 }
 .intro.hide{opacity:0; visibility:hidden; pointer-events:none;}
-.envelope-wrap{text-align:center; padding:18px;}
+.envelope-wrap{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  text-align:center; padding:18px;
+  background:
+    linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.22)),
+    url("./assets/images/image3.jpg") center / cover no-repeat;
+  border-radius: 0px; /* remove rounded corners */
+}
 .intro-title{
   font-family:"Cormorant Garamond",serif;
   font-size:clamp(2rem,8vw,3rem);
+  color:var(--card);
   margin:8px 0 2px;
 }
 .intro-subtitle{color:var(--muted); margin-bottom:16px;}
@@ -204,6 +214,7 @@ body{
   font-family:"Cormorant Garamond",serif;
   font-size:2rem;
   font-weight:600;
+  text-align:center;
 }
 .muted{color:var(--muted)}
 
@@ -221,12 +232,37 @@ body{
   font-size:.74rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
 }
 
+.about-us{
+  margin-top: 14px;
+}
+/* About Us */
+.about-us{
+  position: relative;              /* not absolute */
+  min-height: 1000px;
+  overflow: hidden;               /* clip image inside */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  background:
+    /*linear-gradient(rgba(0,0,0,.22), rgba(245, 245, 245, 0.22)),*/
+    url("./assets/images/about-us-2.jpg") center / cover no-repeat; /* <- path from css file */
+}
+
+
 /* placeholders */
 .placeholder-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:10px;}
 .ph{
   min-height:94px; border-radius:12px; display:grid; place-items:center;
   color:#83786f; font-size:.84rem; background:#f7f2ea;
 }
+/* Our Love Story bottom fade */
+#our-story{
+  position: relative;
+  overflow: hidden;
+}
+
 
 /* Venue */
 .venue-church{
@@ -334,3 +370,8 @@ summary{cursor:pointer; font-weight:600}
   transition:opacity .55s ease,transform .55s cubic-bezier(.22,.61,.36,1);
   transition-delay:var(--reveal-delay,0ms);
 }
+
+/* Lookup */
+.lookup-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.seat-list-wrap{display:grid;gap:10px;margin:10px 0}
+.seat-row{display:grid;gap:6px;background:#f7f2ea;padding:10px;border-radius:10px}

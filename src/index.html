@@ -31,8 +31,7 @@
         <div class="seal">M • A</div>
       </div>
 
-      <h1 class="intro-title">Wedding Invitation</h1>
-      <p class="intro-subtitle">Tap below to open our invitation</p>
+      <h1 class="intro-title">Where Our Forever Unfolds.</h1>
       <button class="open-btn" id="openInviteBtn" type="button">Open Invitation</button>
     </div>
   </section>
@@ -74,8 +73,8 @@
         <p><strong>Ceremony:</strong> San Antonio De Padua, Silang Cavite</p>
       </article>-->
 
-      <article class="card parallax-layer" data-parallax-speed="0.06" id="our-story">
-        <h2>Our Story</h2>
+      <article  class="card parallax-layer" data-parallax-speed="0.06" id="our-story">
+        <h2>Our Love Story</h2>
         <p class="muted">A glimpse of moments that led us here.</p>
         <div class="placeholder-grid">
           <div class="ph">Photo Placeholder</div>
@@ -83,6 +82,12 @@
           <div class="ph">Photo Placeholder</div>
         </div>
       </article> 
+
+      <!-- All about us Section -->
+      <article class="about-us parallax-layer" data-parallax-speed="0.07" id="about-us">
+         <div class="about-us">
+        </div>
+      </article>
 
       <article class="card venue-card parallax-layer" data-parallax-speed="0.07" id="wedding-details">
         <h2>Ceremony</h2>
@@ -97,7 +102,7 @@
         <p class="venue-loc">Silang Cavite, Philippines</p>
         <button class="map-btn" type="button">View Map</button>
       </article>
-
+      
       <article class="card venue-card parallax-layer" data-parallax-speed="0.07" id="wedding-sdt">
         <h2>Save the date video</h2>
         <div class="video-wrap">
@@ -153,37 +158,43 @@
       </article>
 
       <!-- NEW RSVP COLUMN -->
-      <article class="card parallax-layer" data-parallax-speed="0.05" id="rsvp">
-        <h2>RSVP</h2>
-        <p class="muted">Please confirm your attendance on or before November 1, 2026.</p>
+   <article class="card parallax-layer" data-parallax-speed="0.05" id="rsvp">
+  <h2>RSVP</h2>
+  <p class="muted">Please confirm your attendance on or before November 1, 2026.</p>
 
-        <form class="rsvp-form">
-          <label>
-            Full Name
-            <input type="text" placeholder="Your full name" />
-          </label>
+  <div class="rsvp-lookup">
+    <label for="guestSearchInput">Search your name</label>
+    <div class="lookup-row">
+      <input type="text" id="guestSearchInput" placeholder="Type your full name" />
+    </div>
 
-          <label>
-            Will you attend?
-            <select>
-              <option>Joyfully Accepts</option>
-              <option>Regretfully Declines</option>
-            </select>
-          </label>
+    <label for="rsvpCodeInput">RSVP Code / PIN</label>
+    <div class="lookup-row">
+      <input type="text" id="rsvpCodeInput" placeholder="Enter your RSVP code" />
+      <button type="button" class="submit-btn" id="findGuestBtn">Find Reservation</button>
+    </div>
 
-          <label>
-            Number of Guests
-            <input type="number" min="1" max="5" value="1" />
-          </label>
+    <p id="lookupMsg" class="muted"></p>
+  </div>
 
-          <label>
-            Message for the couple
-            <textarea rows="3" placeholder="Write a short message"></textarea>
-          </label>
+  <form class="rsvp-form" id="rsvpForm" style="display:none;">
+    <label>
+      Guest Name
+      <input type="text" id="guestName" readonly />
+    </label>
 
-          <button type="button" class="submit-btn">Submit RSVP</button>
-        </form>
-      </article>
+    <label>
+      Reserved Seats (Additional Companion)
+      <input type="number" id="reservedSeats" readonly />
+    </label>
+
+    <div id="seatListWrap" class="seat-list-wrap"></div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+
+  <p id="rsvpResult" class="muted"></p>
+</article>
 
       <article class="card parallax-layer" data-parallax-speed="0.05" id="faq">
         <h2>Frequently Asked Questions</h2>
