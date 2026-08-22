@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Reservation | Mark & Alexia</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="find-reservation-page">
+  <main class="find-page">
+    <section class="find-wrap">
+      <h1>Find Your Reservation</h1>
+      <p>Please enter your full name and RSVP Code / PIN.</p>
+
+      <div class="rsvp-lookup">
+        <label for="guestSearchInput">Search your name</label>
+        <div class="lookup-row">
+          <input type="text" id="guestSearchInput" placeholder="Type your full name" />
+        </div>
+
+        <label for="rsvpCodeInput">RSVP Code / PIN</label>
+        <div class="lookup-row">
+          <input type="text" id="rsvpCodeInput" placeholder="Enter your RSVP code" />
+          <button type="button" class="submit-btn" id="findGuestBtn">Find Reservation</button>
+        </div>
+
+        <p id="lookupMsg" class="muted"></p>
+      </div>
+
+      <form class="rsvp-form" id="rsvpForm" style="display:none;">
+        <label>
+            Guest Name
+            <input type="text" id="guestName" readonly />
+        </label>
+
+        <label>
+            Reserved Seats (Additional Companion)
+            <input type="number" id="reservedSeats" readonly />
+        </label>
+
+        <div id="seatListWrap" class="seat-list-wrap"></div>
+        <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <p id="rsvpResult" class="muted"></p>
+<!-- Removed duplicate closing form tag -->
+
+      <a href="./index.html#rsvp" class="back-link">← Back to invitation</a>
+    </section>
+
+    <section class="find-reservation-illustration" aria-hidden="true">
+        <img src="./assets/images/faq-bg.png" alt="" />
+    </section>
+    
+  </main>
+
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>
