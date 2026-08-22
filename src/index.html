@@ -36,22 +36,33 @@
 
   <main class="site" id="site">
     <!-- HERO -->
+
     <header class="hero parallax-layer hero-sketch" data-parallax-speed="1.18" id="home">
       <div class="hero-layout">
-        <div class="hero-illustration">
-        <img src="./assets/images/hero-couple.png" alt="Couple doodle illustration" />
+         <div class="hero-gradient-overlay" aria-hidden="true"></div>
+           <div class="hero-illustration">
+          <img src="./assets/images/hero-custom.jpg" alt="Mark and Alexia hero photo" />
+        <!-- <img src="./assets/images/hero-couple.png" alt="Couple doodle illustration" /> -->
       </div>
 
         <div class="hero-content">
-          <img class="hero-title-img" src="./assets/images/hero-title.png" alt="The Wedding of Mark and Alexia" />
-          <div class="countdown hero-countdown" id="countdown">
+          <div class="hero-title-text" aria-label="The Wedding of Mark and Alexia">
+            <p class="hero-kicker">THE WEDDING OF</p>
+            <h1 class="hero-names">
+              <span>MARK</span>
+              <span class="amp">&amp;</span>
+              <span>ALEXIA</span>
+            </h1>
+         </div>
+
+        <div class="countdown hero-countdown">
             <div class="time-box"><div class="num" id="days">0</div><div class="label">Days</div></div>
             <div class="time-box"><div class="num" id="hours">00</div><div class="label">Hours</div></div>
             <div class="time-box"><div class="num" id="mins">00</div><div class="label">Minutes</div></div>
             <div class="time-box"><div class="num" id="secs">00</div><div class="label">Seconds</div></div>
           </div>
-
-          <img class="come-with-us" src="./assets/images/come-with-us.png" alt="Come with us" />
+          <p class="come-with-us"> Come with us</p>
+          <!-- <img class="come-with-us" src="./assets/images/come-with-us.png" alt="Come with us" /> -->
           <a class="scroll-down sketch-arrow" href="#our-story" aria-label="Scroll to our love story">
           <img src="./assets/images/arrow-down.png" alt="" />
           </a>
@@ -64,22 +75,28 @@
       <img src="./assets/images/favicon.png" alt="" />
     </div>
     <!-- CONTENT -->
-    <section class="sections">
-      <article class="card parallax-layer story-sketch" data-parallax-speed="0.06" id="our-story">
+    <article class="card parallax-layer story-sketch" data-parallax-speed="0.06" id="our-story">
+  <div class="story-wrap">
+    <h2 class="story-title">BECOMING<br>#THELAUDES</h2>
+    <p class="muted story-sub">A glimpse of moments that led us here.</p>
 
-        <h2 class="story-title">BECOMING<br>#THELAUDES</h2>
-        <p class="muted story-sub" align="center">A glimpse of moments that led us here.</p>
-        <p align="center">We started our journey together in college, where our paths first crossed and our story began.</p>
-        <p align="center">From late-night study sessions to weekend adventures, we've shared countless memories that have strengthened our bond.</p>
-        <p align="center">Through the years, we've grown together, supporting each other's dreams and celebrating our successes.</p>
-        <p align="center">Now, as we prepare to embark on the next chapter of our lives, we are excited to invite you to witness and celebrate our love as we say "I do."</p>
-        <!--<div class="placeholder-grid story-grid">
-          <div class="ph">How We Met</div>
-          <div class="ph">The Proposal</div>
-          <div class="ph">Our Favorite Memory</div>
-        </div>-->
-        
-      </article>
+    <!-- scrapbook row -->
+    <section class="story-board">
+      <div class="story-letter">
+        <img src="./assets/images/how-we-met.png" alt="How We Met letter" />
+      </div>
+
+      <div class="story-filmstrip">
+        <img src="./assets/images/college-film.png" alt="Our story film strip" />
+      </div>
+
+    </section>
+    </section>
+
+    <!-- optional caption -->
+    <p class="story-note">More snapshots of our story coming soon ✨</p>
+  </div>
+</article>
     
     <div class="laudes-divider" aria-hidden="true"></div>
       <!-- CONTENT -->
@@ -306,13 +323,9 @@
     </article>
     <article class="card parallax-layer contact-sketch full-bleed"  aria-hidden="true">
       <div class="contact-content">
-        <h2 class="contact-title">CONTACT</h2>
-        <p class="contact-sub">For any inquiries, please reach out to us.</p>
-
         <div class="contact-grid">
           <div class="contact-item">
-            <h3>Mark</h3>
-            <p>Email:
+       
 
     <footer class="footer">Made with love • Mark & Alexia • 2026</footer>
   </main>
