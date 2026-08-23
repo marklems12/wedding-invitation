@@ -133,28 +133,22 @@ img{max-width:100%; display:block}
   width: 100vw;
   max-width: 100vw;
   min-height: 100svh;
-  margin: 0;
+  margin:0 !important;
   padding: 0;
   overflow: hidden;
   background: #dfeaf4;
   isolation: isolate;
+ 
 }
 
-/* background photo */
-#home .hero-illustration{
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
 #home .hero-illustration img{
   width: 100%;
   height: 100%;
   max-width: none;
-  display: block;
-  object-fit: cover;
-  object-position: 38% 70%; /* bigger couple, less empty top */
+  display:flex; align-items:center; justify-content:center;
   transform: scale(1.08);
   transform-origin: center;
+
 }
 
 /* right gradient */
@@ -270,38 +264,6 @@ img{max-width:100%; display:block}
   30%{transform:translateY(8px); opacity:.95;}
   55%{transform:translateY(1px);}
   75%{transform:translateY(5px); opacity:.9;}
-}
-
-/* mobile: same look */
-@media (max-width: 768px){
-  #home.hero.hero-sketch,
-  #home .hero-layout{
-    min-height: 100svh;
-  }
-
-  #home .hero-illustration img{
-    object-position: 40% 72%;
-    transform: scale(1.12);
-  }
-
-  #home .hero-layout{
-    align-items: flex-end;
-    padding: 14px 14px 20px;
-  }
-
-  #home .hero-content{
-    width: min(460px, 94vw);
-  }
-
-  #home .hero-names{
-    font-size: clamp(60px, 14vw, 108px);
-  }
-
-  #home .hero-countdown .time-box{
-    width:74px; height:74px;
-  }
-  #home .hero-countdown .num{ font-size:1.6rem; }
-  #home .hero-countdown .label{ font-size:.58rem; }
 }
 
 /* End of Hero */
@@ -869,84 +831,6 @@ img{max-width:100%; display:block}
   color:#2e2e2e; font-size:clamp(.9rem,2vw,1.3rem);
 }
 
-/* ===== FAQ (match Dress Code section behavior) ===== */
-
-/* #faq.faq-sketch{
-  margin:0 !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
-
-  width:100vw !important;
-  max-width:100vw !important;
-  margin-left:calc(50% - 50vw) !important;
-  margin-right:calc(50% - 50vw) !important;
-
-  min-height:100vh; 
-  padding:120px 16px 120px !important;
-
-  background:url("./assets/images/faq-bg.png") top center / cover no-repeat !important;
-} 
-
-#faq .faq-content{
-  width:min(900px, 100%);
-  margin:0 auto;
-  text-align:left;
-}
-
-#faq h2{
-  margin:0 0 22px;
-  text-align:center;
-  font-family:"Comico", sans-serif;
-  font-size:clamp(2rem, 5vw, 3rem);
-  line-height:1.05;
-  color:#2f2725;
-}
-
-#faq .faq-item{
-  background:rgba(255,255,255,.74);
-  border:1px solid rgba(127,47,53,.18);
-  border-radius:14px;
-  padding:12px 14px;
-  margin:10px 0;
-}
-
-#faq .faq-item summary{
-  cursor:pointer;
-  font-weight:700;
-  color:#6f2432;
-  font-size:clamp(1rem, 1.3vw, 1.15rem);
-}
-
-#faq .faq-item p{
-  margin:10px 0 0;
-  color:#4a3a33;
-  font-size:clamp(.95rem, 1.15vw, 1.05rem);
-  line-height:1.5;
-} */
-
-/* mobile like dresscode behavior */
-/* @media (max-width:640px){
-  #faq.faq-sketch{
-    min-height:85vh;
-    padding:72px 12px 90px !important;
-    background-position:top center !important;
-    background-size:cover !important;
-  }
-
-  #faq h2{
-    font-size:clamp(1.7rem, 7.2vw, 2.3rem);
-    margin-bottom:14px;
-  }
-
-  #faq .faq-item{
-    border-radius:12px;
-    padding:11px 12px;
-    margin:8px 0;
-  }
-} */
-
-/* end of FAQ */
-
 /* Reveal */
 .reveal-init{opacity:0; transform:translateY(14px);}
 .reveal-in{
@@ -1319,279 +1203,132 @@ body.find-reservation-page .seat-row{
   content:"▼";
 }
 
-/* ==== HERO TEXT FORCE SHOW ==== */
-#home,
-#home .hero-layout,
-#home .hero-content{
+/* ===== End of FAQ ===== */
+
+/* HERO: use background like RSVP does — reliable on all screens */
+#home.hero.hero-sketch {
   position: relative !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-height: 100svh !important;
+  height: 100svh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  /* same pattern as RSVP */
+  background: url("./assets/images/hero-custom1.jpg") top center / cover no-repeat !important;
 }
 
-#home .hero-content{
-  z-index: 50 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
-
-#home .hero-title-text,
-#home .hero-kicker,
-#home .hero-names,
-#home .hero-names span,
-#home .hero-countdown,
-#home .come-with-us{
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-#home .hero-title-text{
-  display: block !important;
-  color: #4b342c !important;
-}
-
-#home .hero-kicker{
-  display:block !important;
-  font-size: clamp(16px, 1.6vw, 30px) !important;
-  color: #4b342c !important;
-}
-
-#home .hero-names{
-  display:block !important;
-  font-size: clamp(72px, 8.5vw, 150px) !important;
-  line-height: .92 !important;
-  color: #4b342c !important;
-}
-
-#home .hero-countdown{
-  display:flex !important;
-  z-index: 51 !important;
-}
-
-/* HERO right-side white gradient overlay */
-#home{
-  position: relative !important;
-  isolation: isolate !important;
-}
-
-#home::after{
-  content: "" !important;
+/* gradient overlay */
+#home .hero-gradient-overlay {
   position: absolute !important;
   inset: 0 !important;
-  z-index: 4 !important;            /* above photo */
+  z-index: 2 !important;
   pointer-events: none !important;
   background: linear-gradient(
     to left,
     rgba(255,255,255,0.92) 0%,
     rgba(255,255,255,0.66) 20%,
-    rgba(255,255,255,0.30) 38%,
-    rgba(255,255,255,0.10) 52%,
-    rgba(255,255,255,0.00) 64%
+    rgba(255,255,255,0.28) 42%,
+    rgba(255,255,255,0.06) 58%,
+    rgba(255,255,255,0.00) 68%
   ) !important;
 }
 
-/* keep content above gradient */
-#home .hero-layout,
-#home .hero-content{
-  position: relative !important;
-  z-index: 5 !important;
-}
+/* kill the ::after duplicate */
+#home::after { display: none !important; }
 
-#home{
-  position: relative !important;
-  overflow: hidden !important;
-  isolation: isolate !important;
-}
-
-/* photo layer */
-#home .hero-illustration{
+/* content */
+#home .hero-content {
   position: absolute !important;
-  inset: 0 !important;
-  z-index: 0 !important;
-}
-#home .hero-illustration img{
-  width:100% !important;
-  height:100% !important;
-  object-fit: cover !important;
-}
-
-/* guaranteed visible gradient */
-#home .hero-gradient-overlay{
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 4 !important;
-  pointer-events: none !important;
-  background: linear-gradient(
-    to left,
-    rgba(255,255,255,0.95) 0%,
-    rgba(255,255,255,0.74) 18%,
-    rgba(255,255,255,0.36) 38%,
-    rgba(255,255,255,0.12) 54%,
-    rgba(255,255,255,0.00) 66%
-  ) !important;
-}
-
-/* content above overlay */
-#home .hero-layout,
-#home .hero-content{
-  position: relative !important;
+  top: 50% !important;
+  right: 5% !important;
+  transform: translateY(-50%) !important;
   z-index: 5 !important;
+  width: min(420px, 46vw) !important;
+  text-align: center !important;
 }
 
-/* ===== MOBILE: FORCE DESKTOP COMPOSITION ===== */
-@media (max-width: 768px){
-  #home.hero.hero-sketch{
-    position: relative !important;
-    width: 100vw !important;
-    height: 100svh !important;
-    min-height: 100svh !important;
-    overflow: hidden !important;
+/* desktop */
+@media (min-width: 769px) {
+  #home.hero.hero-sketch {
+    background-position: 38% center !important;
+  }
+  #home .hero-content {
+    width: min(420px, 44vw) !important;
+    right: 4% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #home.hero.hero-sketch {
+    height: auto !important;
+    min-height: unset !important;   /* removed 100svh — was causing the gap */
+    aspect-ratio: unset !important;
+    display: block !important;     /* no longer needs flex/column now */
   }
 
-  /* create a virtual desktop canvas inside mobile */
-  #home .hero-illustration{
-    position: absolute !important;
-    top: 0 !important;
-    left: 50% !important;
-    width: 177.78svh !important;      /* 16:9 canvas based on screen height */
-    height: 100svh !important;
-    transform: translateX(-50%) !important;
-    z-index: 0 !important;
-  }
-
-  #home .hero-illustration img{
+  #home .hero-illustration {
+    position: relative !important;  /* becomes the positioning context for hero-content */
+    inset: auto !important;
     width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: 38% 70% !important;  /* same as desktop */
-    transform: none !important;
+    height: auto !important;
+    aspect-ratio: unset !important;
   }
 
-  /* gradient should follow same desktop canvas */
-  #home .hero-gradient-overlay{
+  #home .hero-illustration img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+  }
+
+  #home .hero-content {
     position: absolute !important;
-    top: 0 !important;
-    left: 50% !important;
-    width: 177.78svh !important;
-    height: 100svh !important;
-    transform: translateX(-50%) !important;
-    z-index: 4 !important;
-    pointer-events: none !important;
-  }
-
-  /* keep content above */
-  #home .hero-layout,
-  #home .hero-content{
-    position: relative !important;
+    top: 50% !important;
+    right: 4% !important;
+    transform: translateY(-50%) !important;
     z-index: 5 !important;
+    width: min(170px, 44vw) !important;
+    text-align: center !important;
   }
-}
-
-/* ===== HERO MOBILE FIX ONLY (keep desktop unchanged) ===== */
-@media (max-width: 768px){
-  /* full viewport hero */
-  #home.hero.hero-sketch{
-    width: 100vw !important;
-    height: 100svh !important;
-    min-height: 100svh !important;
-    overflow: hidden !important;
-  }
-
-  /* stable layering */
-  #home .hero-illustration{
+  
+   /* re-enable gradient on mobile so text stays readable over the photo */
+  #home .hero-gradient-overlay {
+    display: block !important;
     position: absolute !important;
     inset: 0 !important;
-    z-index: 0 !important;
-  }
-
-  /* mobile-friendly crop (same vibe as desktop) */
-  #home .hero-illustration img{
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: 36% 72% !important;
-    transform: scale(1.06) !important;
-    transform-origin: center center !important;
-  }
-
-  /* gradient visible on mobile */
-  #home .hero-gradient-overlay{
-    position: absolute !important;
-    inset: 0 !important;
-    z-index: 4 !important;
+    z-index: 2 !important;
     pointer-events: none !important;
     background: linear-gradient(
       to left,
-      rgba(255,255,255,0.90) 0%,
-      rgba(255,255,255,0.62) 20%,
-      rgba(255,255,255,0.28) 40%,
-      rgba(255,255,255,0.08) 56%,
-      rgba(255,255,255,0.00) 66%
+      rgba(255,255,255,0.85) 0%,
+      rgba(255,255,255,0.55) 30%,
+      rgba(255,255,255,0.20) 55%,
+      rgba(255,255,255,0.00) 72%
     ) !important;
   }
-
-  /* place content like desktop right-side */
-  #home .hero-layout{
-    position: relative !important;
-    z-index: 5 !important;
-    min-height: 100svh !important;
-    width: 100% !important;
-    padding: 14px 14px 20px !important;
-    display: flex !important;
-    justify-content: flex-end !important;
-    align-items: center !important;
+  
+  #home .hero-kicker {
+    font-size: clamp(8px, 2.2vw, 10px) !important;
+    margin: 0 0 4px !important;
   }
 
-  #home .hero-content{
-    position: relative !important;
-    z-index: 6 !important;
-    width: min(320px, 56vw) !important;
-    margin-left: auto !important;
-    margin-right: 0 !important;
-    text-align: center !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+  #home .hero-names {
+    font-size: clamp(26px, 7vw, 38px) !important;
+    line-height: .85 !important;
   }
 
-  /* text scale for mobile */
-  #home .hero-kicker{
-    font-size: clamp(12px, 2.1vw, 16px) !important;
-    letter-spacing: .10em !important;
-    margin-bottom: 6px !important;
-  }
-
-  #home .hero-names{
-    font-size: clamp(56px, 10.5vw, 84px) !important;
-    line-height: .9 !important;
-  }
-
-  #home .hero-names .amp{
-    font-size: .58em !important;
-    margin: .04em 0 !important;
-  }
-
-  /* countdown keep readable */
-  #home .hero-countdown{
-    gap: 6px !important;
-    margin-top: 8px !important;
-  }
-
-  #home .hero-countdown .time-box{
-    width: 66px !important;
-    height: 66px !important;
-  }
-
-  #home .hero-countdown .num{ font-size: 1.45rem !important; }
-  #home .hero-countdown .label{ font-size: .54rem !important; }
-
-  #home .come-with-us{
+  #home .hero-countdown {
+    gap: 4px !important;
     margin-top: 6px !important;
-    font-size: 1.9rem !important;
   }
 
-  #home .sketch-arrow img{
-    width: 30px !important;
+  #home .hero-countdown .time-box {
+    width: 34px !important;
+    height: 34px !important;
+    padding: 4px 2px !important;
   }
+  #home .hero-countdown .num  { font-size: .7rem !important; }
+  #home .hero-countdown .label { font-size: .28rem !important; }
 }
