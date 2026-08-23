@@ -376,22 +376,51 @@ img{max-width:100%; display:block}
 
 .know-icons{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-columns:repeat(3, minmax(0,1fr));
   gap:26px 20px;
+  justify-items:center;   /* centers each item horizontally in its cell */
+  align-items:start;      /* keeps icon+caption tops aligned per row */
 }
 .know-item{
+  margin:0;               /* reset default <figure> margin causing the shift */
   text-align:center;
-  display:flex; flex-direction:column; align-items:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
 }
 .know-item .icon-wrap{
-  width:110px; height:110px; display:grid; place-items:center;
+   width:110px;
+  height:110px;
+  display:grid;
+  place-items:center;
   margin:0 auto 8px;
+}
+.know-item figcaption{
+  margin:0;
+  max-width:190px;
 }
 .know-item img{
   width:100%; height:100%; object-fit:contain; object-position:center; display:block;
 }
 .know-item p,.know-item figcaption{
   margin:0; font-size:.78rem; line-height:1.35; color:#3f3a37; max-width:190px;
+}
+
+/* mobile: keep 2 columns, tighten gap and icon size */
+@media (max-width: 640px){
+  .know-icons{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:20px 14px;
+  }
+  .know-item .icon-wrap{
+    width:88px;
+    height:88px;
+  }
+  .know-item figcaption{
+    font-size:.72rem;
+    max-width:160px;
+  }
 }
 
 /* ===== OUR STORY REFRESH ===== */
@@ -1308,7 +1337,7 @@ body.find-reservation-page .seat-row{
       rgba(255,255,255,0.00) 72%
     ) !important;
   }
-  
+
   #home .hero-kicker {
     font-size: clamp(8px, 2.2vw, 10px) !important;
     margin: 0 0 4px !important;
@@ -1332,3 +1361,4 @@ body.find-reservation-page .seat-row{
   #home .hero-countdown .num  { font-size: .7rem !important; }
   #home .hero-countdown .label { font-size: .28rem !important; }
 }
+
