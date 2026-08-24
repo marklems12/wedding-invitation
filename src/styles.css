@@ -72,7 +72,7 @@ img{max-width:100%; display:block}
   padding:18px;
   background:
     linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.22)),
-    url("./assets/images/image3.jpg") center / cover no-repeat;
+    
 }
 .intro-title{
   font-family:"Cormorant Garamond",serif;
@@ -118,12 +118,190 @@ img{max-width:100%; display:block}
 .intro.opening .envelope-lid{transform:rotateX(170deg);}
 .intro.opening .letter{transform:translateX(-50%) translateY(-40%);}
 .intro.opening .seal{opacity:0;}
-.open-btn{
+/*.open-btn{
   border:0; border-radius:999px;
   padding:12px 24px; cursor:pointer;
   background:var(--sage); color:#fff; font-weight:600;
+}*/
+
+/* hide the old built-from-scratch envelope elements since the image replaces them */
+.intro{
+  position:fixed;
+  inset:0;
+  width:100vw;
+  height:100vh;
+  height:100dvh;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f6f1e8;
+  overflow:hidden;
 }
 
+.envelope-wrap{
+  position:relative;
+  height:100%;
+  max-height:100vh;
+  max-height:100dvh;
+  width:auto;
+  aspect-ratio: 1024 / 1536;   /* exact ratio of invite-card.png */
+  max-width:600px;
+  margin:0 auto;
+  overflow:hidden;
+}
+
+@media (max-width:768px){
+  .envelope-wrap{
+    width:100%;
+    height:100%;
+    aspect-ratio:unset;        /* keep your confirmed working mobile behavior unchanged */
+  }
+}
+
+.invite-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+
+.invite-text{
+  position:absolute;
+  top:44%;                   /* moved down so it clears the monogram */
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:2;
+  text-align:center;
+  width:min(320px, 80vw);
+  color:#2e2a29;
+}
+
+.seal-hint{
+  position:absolute;
+  top:0%;
+  margin-top:10px;
+  white-space:nowrap;          /* forces single line */
+  font-family:"Cormorant Garamond", serif;
+  font-style:normal;           /* italic can hurt readability at small sizes */
+  font-weight:600;
+  font-size:clamp(.90rem, 3vw, .95rem);
+  letter-spacing:.02em;
+  color:#3a332f;
+  text-align:center;
+  left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+
+@media (max-width:480px){
+  .seal-hint{
+    font-size:.72rem;
+    margin-top:80px;
+  }
+}
+
+.seal-wrap{
+  position:absolute;
+  bottom:100%;              /* pushed lower — was 35% (desktop) / 50% (mobile) */
+  left:50%;
+  transform:translateX(-50%);
+  width:22vw;
+  max-width:120px;
+  min-width:70px;             /* guarantees visible size even on tiny screens */
+  aspect-ratio:1/1;
+  z-index:999;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.seal-btn{
+  position:relative;
+  width:100%;
+  height:100%;
+  border:0;
+  background:transparent;
+  padding:0;
+  cursor:pointer;
+  border-radius:50%;
+}
+
+.seal-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));
+}
+
+@media (max-width:480px){
+  .invite-text{
+    top:40%;
+    width:min(260px, 82vw);
+  }
+  .seal-wrap{
+    bottom:36%;
+    width:20vw;
+    min-width:64px;
+  }
+}
+
+.invite-text{
+  position:absolute;
+  top:38%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:2;
+  text-align:center;
+  width:min(320px, 80vw);
+  color:#2e2a29;
+}
+
+.invite-date{
+  margin:0 0 10px;
+  font-family:"Cormorant Garamond", serif;
+  letter-spacing:.22em;
+  font-size:clamp(.85rem, 3vw, 1.05rem);
+}
+
+.invite-names{
+  margin:0 0 10px;
+  font-family:"Comico", sans-serif;
+  font-weight:600;
+  letter-spacing:.06em;
+  font-size:clamp(1.8rem, 10vw, 4.5rem);
+  line-height:1.15;
+}
+
+.invite-tagline{
+  margin:0;
+  font-family:"Cormorant Garamond", serif;
+  font-style:italic;
+  font-size:clamp(.9rem, 3.2vw, 1.15rem);
+  color:#4f4741;
+}
+
+@media (max-width:480px){
+  .invite-text{
+    top:33%;
+    width:min(260px, 82vw);
+  }
+  .invite-date{
+    font-size:1rem;
+    letter-spacing:.18em;
+  }
+  .invite-names{
+    font-size:2.5rem;
+  }
+  .invite-tagline{
+    font-size:1rem;
+  }
+}
 
 /* =========================
    HERO (UPDATED FULL DESIGN)
@@ -203,7 +381,7 @@ img{max-width:100%; display:block}
 }
 #home .hero-names{
   margin: 0;
-  font-family: "Comico", "Patrick Hand", cursive;
+  font-family: "Comico";
   font-size: clamp(72px, 9vw, 156px);
   line-height: .9;
   letter-spacing: .01em;
@@ -1267,7 +1445,7 @@ body.find-reservation-page .seat-row{
   margin: 0 !important;
   padding: 0 !important;
   /* same pattern as RSVP */
-  background: url("./assets/images/hero-custom1.jpg") top center / cover no-repeat !important;
+  background: url("./assets/images/hero-custom.jpg") top center / cover no-repeat !important;
 }
 
 /* gradient overlay */

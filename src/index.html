@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Mobile-first single-page wedding invitation" />
-  <title>Mark & Alexia | Wedding Invitation</title>
+  <title>Mark & Alexia</title>
 
   <link rel="icon" type="image/png" sizes="600x400" href="./assets/images/favicon.png" />
   <link rel="apple-touch-icon" href="./assets/images/favicon.png" />
@@ -19,19 +19,24 @@
 </head>
 <body>
   <section class="intro" id="intro" aria-label="Invitation intro">
-    <div class="envelope-wrap">
-      <p class="eyebrow">You are warmly invited</p>
+    <div class="intro" id="intro">
+  <div class="envelope-wrap">
+    <img src="./assets/images/invite-card.png" alt="Wedding invitation card" class="invite-img" />
 
-      <div class="envelope" aria-hidden="true">
-        <div class="envelope-base"></div>
-        <div class="letter">Open to reveal invitation</div>
-        <div class="envelope-lid"></div>
-        <div class="seal">M • A</div>
-      </div>
-
-      <h1 class="intro-title">Where Our Forever Unfolds.</h1>
-      <button class="open-btn" id="openInviteBtn" type="button">Open Invitation</button>
+    <div class="invite-text">
+      <p class="invite-date">28 NOVEMBER 2026</p>
+      <h1 class="invite-names">MARK <br>&amp;<br> ALEXIA</h1>
+      <p class="invite-tagline">You Are Invited</p>
     </div>
+
+    <div class="seal-wrap">
+      <button class="seal-btn" id="openInviteBtn" aria-label="Open Invitation">
+        <img src="./assets/images/seal.png" alt="Wax seal - tap to open" class="seal-img" />
+      </button>
+      <span class="seal-hint">Click the seal to open</span>
+    </div>
+  </div>
+</div>
   </section>
 
   <main class="site" id="site">
