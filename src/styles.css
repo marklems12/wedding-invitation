@@ -13,6 +13,16 @@
   font-style:normal;
   font-display:swap;
 }
+@font-face{
+  font-family:"Pally";
+  src:url("./assets/fonts/Pally-Regular.woff2") format("woff2"),
+      url("./assets/fonts/Pally-Regular.woff") format("woff"),
+      url("./assets/fonts/Pally-Regular.ttf") format("truetype"),
+      url("./assets/fonts/Pally-Medium.woff") format("opentype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
 
 :root{
   --sage:#7b8f7a;
@@ -811,6 +821,27 @@ img{max-width:100%; display:block}
   font-size: clamp(1.8rem, 5.5vw, 3rem);
 }
 
+/* optional note */
+#ceremony .places-note-title{
+  font-family: "Cormorant Garamond",serif;
+  margin: 12px 0 6px;
+  text-align: center;
+  color: #fff;
+}
+#ceremony .places-note{
+  margin: 0 auto;
+  width: min(96%, 760px);
+  text-align: center;
+  color: rgba(255,255,255,.95);
+  line-height: 1.4;
+  font-size: .95rem;
+  font-family: url("./assets/fonts/Pally-Regular.woff2") format("woff2"),
+      url("./assets/fonts/Pally-Regular.woff") format("woff"),
+      url("./assets/fonts/Pally-Regular.ttf") format("truetype"),
+      url("./assets/fonts/Pally-Medium.woff") format("woff"),
+      serif;
+}
+
 /* stack layout (mobile first) */
 #ceremony .places-grid{
   display: grid;
@@ -831,11 +862,11 @@ img{max-width:100%; display:block}
   margin: 0;
   padding: 6px 12px;
   text-align: center;
-  color: #000000;
+  color: #faf8f8;
   text-transform: uppercase;
   letter-spacing: .08em;
   font-size: clamp(.85rem, 2.5vw, 1.05rem);
-  background: #ece9ea; /* white */
+  background: #bd858d; /* white */
 }
 
 #ceremony .place-photo img{
@@ -940,21 +971,6 @@ img{max-width:100%; display:block}
   line-height: 1.2;
 }
 
-/* optional note */
-#ceremony .places-note-title{
-  margin: 12px 0 6px;
-  text-align: center;
-  color: #fff;
-  font-weight: 700;
-}
-#ceremony .places-note{
-  margin: 0 auto;
-  width: min(96%, 760px);
-  text-align: center;
-  color: rgba(255,255,255,.95);
-  line-height: 1.4;
-  font-size: .95rem;
-}
 
 .map-btn{
   flex: 0 0 auto;
@@ -994,6 +1010,8 @@ img{max-width:100%; display:block}
   #ceremony .places-title{
     font-size: clamp(2rem, 3.2vw, 3rem);
     margin-bottom: 26px;
+    font-family: 
+      url("./assets/fonts/Pally-Regular.woff") format("woff"), serif;
   }
 
   #ceremony .places-grid{
@@ -1590,14 +1608,14 @@ body.find-reservation-page .seat-row{
   background: url("./assets/images/hero-custom.jpg") top center / cover no-repeat !important;
 }
 
-/* gradient overlay */
+/* bottom gradient overlay */
 #home .hero-gradient-overlay {
   position: absolute !important;
   inset: 0 !important;
   z-index: 2 !important;
   pointer-events: none !important;
   background: linear-gradient(
-    to left,
+    to top,
     rgba(255,255,255,0.92) 0%,
     rgba(255,255,255,0.66) 20%,
     rgba(255,255,255,0.28) 42%,
@@ -1665,19 +1683,19 @@ body.find-reservation-page .seat-row{
     text-align: center !important;
   }
   
-   /* re-enable gradient on mobile so text stays readable over the photo */
+  /* bottom gradient overlay */
   #home .hero-gradient-overlay {
-    display: block !important;
     position: absolute !important;
     inset: 0 !important;
     z-index: 2 !important;
     pointer-events: none !important;
     background: linear-gradient(
-      to left,
-      rgba(255,255,255,0.85) 0%,
-      rgba(255,255,255,0.55) 30%,
-      rgba(255,255,255,0.20) 55%,
-      rgba(255,255,255,0.00) 72%
+      to top,
+      rgba(255,255,255,0.92) 0%,
+      rgba(255,255,255,0.66) 20%,
+      rgba(255,255,255,0.28) 42%,
+      rgba(255,255,255,0.06) 58%,
+      rgba(255,255,255,0.00) 68%
     ) !important;
   }
 
