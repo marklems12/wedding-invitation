@@ -63,8 +63,9 @@ img{max-width:100%; display:block}
   position:fixed; inset:0; z-index:9999;
   display:grid; place-items:center;
   background:linear-gradient(180deg,#f9f5ee 0%,#f2eae0 100%);
-  transition:opacity .6s ease, visibility .6s ease;
+  transition:opacity .2s ease, visibility .2s ease;
 }
+
 .intro.hide{opacity:0; visibility:hidden; pointer-events:none;} 
  .envelope-wrap{
   position:absolute; inset:0;
