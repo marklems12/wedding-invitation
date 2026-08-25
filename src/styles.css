@@ -50,23 +50,23 @@ img{max-width:100%; display:block}
 }
 .site.show{opacity:1; transform:translateY(0);}
 
-.eyebrow{
+ .eyebrow{
   text-transform:uppercase;
   letter-spacing:.14em;
   font-size:.72rem;
   color:var(--muted);
   margin:0 0 8px;
-}
+} 
 
 /* Intro */
-.intro{
+ .intro{
   position:fixed; inset:0; z-index:9999;
   display:grid; place-items:center;
   background:linear-gradient(180deg,#f9f5ee 0%,#f2eae0 100%);
   transition:opacity .6s ease, visibility .6s ease;
 }
-.intro.hide{opacity:0; visibility:hidden; pointer-events:none;}
-.envelope-wrap{
+.intro.hide{opacity:0; visibility:hidden; pointer-events:none;} 
+ .envelope-wrap{
   position:absolute; inset:0;
   text-align:center;
   padding:18px;
@@ -80,49 +80,21 @@ img{max-width:100%; display:block}
   color:var(--card);
   margin:8px 0 2px;
 }
-.envelope{
-  width:min(420px,88vw);
-  aspect-ratio:16/10;
-  margin:0 auto 18px;
-  position:relative;
-  perspective:1200px;
-}
-.envelope-base{position:absolute; inset:0; border-radius:14px; background:#fff;}
-.envelope-base:before{
-  content:""; position:absolute; inset:0;
-  clip-path:polygon(50% 32%,100% 100%,0 100%);
-  background:linear-gradient(180deg,#f5e8da,#eddac8);
-}
-.envelope-lid{position:absolute; inset:0; transform-origin:top; transition:transform 1s cubic-bezier(.2,.8,.2,1);}
-.envelope-lid:before{
-  content:""; position:absolute; inset:0;
-  clip-path:polygon(0 0,100% 0,50% 62%);
-  background:linear-gradient(180deg,#ecd9c8,#e2c6b0);
-  border-radius:14px 14px 0 0;
-}
-.letter{
-  position:absolute; left:50%; bottom:8%; transform:translateX(-50%);
-  width:86%; height:76%; border-radius:10px; background:#fff;
-  display:grid; place-items:center;
-  color:var(--burgundy); font-weight:600;
-  transition:transform 1s cubic-bezier(.2,.8,.2,1);
-}
+
 .seal{
   position:absolute; left:50%; top:44%; transform:translate(-50%,-50%);
   width:58px; height:58px; border-radius:50%;
   display:grid; place-items:center;
   background:var(--burgundy); color:#fff;
-  font-family:"Cormorant Garamond",serif;
+  font-family:"cormorant garamond",serif;
   z-index:5; transition:opacity .4s;
 }
-.intro.opening .envelope-lid{transform:rotateX(170deg);}
-.intro.opening .letter{transform:translateX(-50%) translateY(-40%);}
-.intro.opening .seal{opacity:0;}
-/*.open-btn{
+
+.open-btn{
   border:0; border-radius:999px;
   padding:12px 24px; cursor:pointer;
   background:var(--sage); color:#fff; font-weight:600;
-}*/
+}
 
 /* hide the old built-from-scratch envelope elements since the image replaces them */
 .intro{
@@ -158,18 +130,18 @@ img{max-width:100%; display:block}
   
   /* this is for desktop view */
   .envelope-wrap{
-    height:150vh;              /* increased from 92vh */
-    max-height:3000px;        /* increased from 920px */
+    height:99.5vh;              /* increased from 92vh */
+    max-height:2500px;        /* increased from 920px */
     width:auto;
     aspect-ratio:1024 / 1536;
-    max-width:3000px;          /* increased from 520px */
+    max-width:2500px;          /* increased from 520px */
     margin:0 auto;
     overflow:visible;
     border-radius:1px;
   }
 
   .seal-wrap{
-    bottom:10%;                 /* was 0% — that pushed it off/below the card */
+    bottom:100%;                 /* was 0% — that pushed it off/below the card */
     width:60vw;
     min-width:64px;
     max-width:200px;
@@ -177,7 +149,7 @@ img{max-width:100%; display:block}
   }
 
   .invite-text{
-    top:36%;                   /* was 33% and measured against the oversized card */
+    top:30%;                   /* was 33% and measured against the oversized card */
     width:min(320px, 82vw);
   }
   .invite-date{
@@ -185,13 +157,13 @@ img{max-width:100%; display:block}
     letter-spacing:.18em;
   }
   .invite-names{
-    font-size:5rem;
+    font-size:3rem;
   }
   .invite-tagline{
     font-size:1rem;
   }
   .seal-btn{
-  top: 1500%;
+  top: 400%;
   position:relative;
   width:100%;
   height:100%;
@@ -202,13 +174,15 @@ img{max-width:100%; display:block}
   background:transparent;
  }
 
-  .seal-hint{
-    font-size:.72rem;
-    margin-top:150px;
-  }
-
+.seal-hint{
+    font-size:1rem;
+    top:500px;
+    position:relative;
+    width:100%;
+    height:100%;
 }
 
+}
 
 .invite-img{
   position:absolute;
@@ -231,6 +205,7 @@ img{max-width:100%; display:block}
   color:#2e2a29;
 }
 
+/* mobile tweaks */
 .seal-hint{
   position:absolute;
   top:0%;
@@ -248,12 +223,6 @@ img{max-width:100%; display:block}
   pointer-events:none;
 }
 
-@media (max-width:480px){
-  .seal-hint{
-    font-size:.72rem;
-    margin-top:80px;
-  }
-}
 
 .seal-wrap{
   position:absolute;
@@ -291,8 +260,12 @@ img{max-width:100%; display:block}
 }
 
 @media (max-width:480px){
+  .seal-hint{
+    font-size:.72rem;
+    margin-top:80px;
+  }
   .invite-text{
-    top:40%;
+    top:50%;
     width:min(260px, 82vw);
   }
   .seal-wrap{
@@ -302,9 +275,10 @@ img{max-width:100%; display:block}
   }
 }
 
+/* to move the invite text down so it clears the monogram, we can adjust the top percentage */
 .invite-text{
   position:absolute;
-  top:38%;
+  top:33%;
   left:50%;
   transform:translate(-50%,-50%);
   z-index:2;
@@ -337,22 +311,6 @@ img{max-width:100%; display:block}
   color:#4f4741;
 }
 
-@media (max-width:480px){
-  .invite-text{
-    top:33%;
-    width:min(260px, 82vw);
-  }
-  .invite-date{
-    font-size:1rem;
-    letter-spacing:.18em;
-  }
-  .invite-names{
-    font-size:2.5rem;
-  }
-  .invite-tagline{
-    font-size:1rem;
-  }
-}
 
 /* =========================
    HERO (UPDATED FULL DESIGN)
