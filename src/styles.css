@@ -853,9 +853,9 @@ img{max-width:100%; display:block}
 /* card style */
 #ceremony .place-card{
   background: #f6efe8;
-  border-radius: 22px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+  
 }
 
 #ceremony .place-type{
@@ -1039,8 +1039,8 @@ img{max-width:100%; display:block}
   }
 }
 
-.car-icon-img{
-  width: 44px;        /* adjust to match mockup */
+.pin-point-img{
+  width: 70px;        /* adjust to match mockup */
   height: auto;
   display: block;
   margin: 0 auto 6px;
@@ -1049,7 +1049,7 @@ img{max-width:100%; display:block}
 }
 
 .car-icon-img{
-  width: 44px;        /* adjust to match mockup */
+  width: 30px;        /* adjust to match mockup */
   height: auto;
   display: block;
   margin: 0 auto 6px;
