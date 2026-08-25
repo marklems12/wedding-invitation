@@ -81,15 +81,6 @@ img{max-width:100%; display:block}
   margin:8px 0 2px;
 }
 
-.seal{
-  position:absolute; left:50%; top:44%; transform:translate(-50%,-50%);
-  width:58px; height:58px; border-radius:50%;
-  display:grid; place-items:center;
-  background:var(--burgundy); color:#fff;
-  font-family:"cormorant garamond",serif;
-  z-index:5; transition:opacity .4s;
-}
-
 .open-btn{
   border:0; border-radius:999px;
   padding:12px 24px; cursor:pointer;
@@ -123,6 +114,63 @@ img{max-width:100%; display:block}
   overflow:hidden;
 }
 
+
+/* mobile tweaks */
+.seal-hint{
+  position:absolute;
+  top:0%;
+  margin-top:85px;
+  white-space:nowrap;          /* forces single line */
+  font-family:"Cormorant Garamond", serif;
+  font-style:normal;           /* italic can hurt readability at small sizes */
+  font-weight:600;
+  font-size:clamp(.90rem, 3vw, .95rem);
+  letter-spacing:.02em;
+  color:#3a332f;
+  text-align:center;
+  left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+
+
+/* to move the invite text down so it clears the monogram, we can adjust the top percentage */
+.invite-text{
+  position:absolute;
+  top:33%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:2;
+  text-align:center;
+  width:min(320px, 80vw);
+  color:#2e2a29;
+}
+
+.invite-date{
+  margin:0 0 10px;
+  font-family:"Cormorant Garamond", serif;
+  letter-spacing:.22em;
+  font-size:clamp(.85rem, 1vw, 1.05rem);
+}
+
+.invite-names{
+  margin:0 0 10px;
+  font-family:"Comico", sans-serif;
+  font-weight:600;
+  letter-spacing:.06em;
+  font-size:clamp(1rem, 3vw, 4.5rem);
+  line-height:1.15;
+}
+
+.invite-tagline{
+  margin:0;
+  font-family:"Cormorant Garamond", serif;
+  font-style:italic;
+  font-size:clamp(.9rem, 3.2vw, 1.15rem);
+  color:#4f4741;
+}
+
+
 @media (min-width:769px){
   .intro{
     background:radial-gradient(ellipse at center, #f9f5ee 0%, #ece3d3 100%);
@@ -149,7 +197,7 @@ img{max-width:100%; display:block}
   }
 
   .invite-text{
-    top:30%;                   /* was 33% and measured against the oversized card */
+    top:33%;                   /* was 33% and measured against the oversized card */
     width:min(320px, 82vw);
   }
   .invite-date{
@@ -163,7 +211,7 @@ img{max-width:100%; display:block}
     font-size:1rem;
   }
   .seal-btn{
-  top: 400%;
+  top: 570%;
   position:relative;
   width:100%;
   height:100%;
@@ -174,13 +222,16 @@ img{max-width:100%; display:block}
   background:transparent;
  }
 
-.seal-hint{
-    font-size:1rem;
-    top:500px;
-    position:relative;
-    width:100%;
-    height:100%;
-}
+  .seal-hint{
+      top: 500%;
+      position:relative;
+      width:100%;
+      height:100%;
+      border:0;
+      padding:0;
+      left: 40%;
+      transform: translateX(-50%);
+  }
 
 }
 
@@ -193,36 +244,6 @@ img{max-width:100%; display:block}
   object-position:center top;
   display:block;
 }
-
-.invite-text{
-  position:absolute;
-  top:44%;                   /* moved down so it clears the monogram */
-  left:50%;
-  transform:translate(-50%,-50%);
-  z-index:2;
-  text-align:center;
-  width:min(320px, 80vw);
-  color:#2e2a29;
-}
-
-/* mobile tweaks */
-.seal-hint{
-  position:absolute;
-  top:0%;
-  margin-top:10px;
-  white-space:nowrap;          /* forces single line */
-  font-family:"Cormorant Garamond", serif;
-  font-style:normal;           /* italic can hurt readability at small sizes */
-  font-weight:600;
-  font-size:clamp(.90rem, 3vw, .95rem);
-  letter-spacing:.02em;
-  color:#3a332f;
-  text-align:center;
-  left:50%;
-  transform:translateX(-50%);
-  pointer-events:none;
-}
-
 
 .seal-wrap{
   position:absolute;
@@ -262,10 +283,10 @@ img{max-width:100%; display:block}
 @media (max-width:480px){
   .seal-hint{
     font-size:.72rem;
-    margin-top:80px;
+    margin-top:100px;
   }
   .invite-text{
-    top:50%;
+    top:33%;
     width:min(260px, 82vw);
   }
   .seal-wrap{
@@ -273,42 +294,16 @@ img{max-width:100%; display:block}
     width:20vw;
     min-width:64px;
   }
-}
-
-/* to move the invite text down so it clears the monogram, we can adjust the top percentage */
-.invite-text{
-  position:absolute;
-  top:33%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  z-index:2;
-  text-align:center;
-  width:min(320px, 80vw);
-  color:#2e2a29;
-}
-
-.invite-date{
-  margin:0 0 10px;
-  font-family:"Cormorant Garamond", serif;
-  letter-spacing:.22em;
-  font-size:clamp(.85rem, 3vw, 1.05rem);
-}
-
-.invite-names{
-  margin:0 0 10px;
-  font-family:"Comico", sans-serif;
-  font-weight:600;
-  letter-spacing:.06em;
-  font-size:clamp(1.8rem, 10vw, 4.5rem);
-  line-height:1.15;
-}
-
-.invite-tagline{
-  margin:0;
-  font-family:"Cormorant Garamond", serif;
-  font-style:italic;
-  font-size:clamp(.9rem, 3.2vw, 1.15rem);
-  color:#4f4741;
+  .invite-date{
+    font-size:1rem;
+    letter-spacing:.18em;
+  }
+  .invite-names{
+    font-size:2.5rem;
+  }
+  .invite-tagline{
+    font-size:1rem;
+  }
 }
 
 
