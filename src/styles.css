@@ -141,7 +141,7 @@ img{max-width:100%; display:block}
 
 .envelope-wrap{
   position:relative;
-  height:100%;
+  height:150%;
   max-height:100vh;
   max-height:100dvh;
   width:auto;
@@ -151,13 +151,64 @@ img{max-width:100%; display:block}
   overflow:hidden;
 }
 
-@media (max-width:768px){
-  .envelope-wrap{
-    width:100%;
-    height:100%;
-    aspect-ratio:unset;        /* keep your confirmed working mobile behavior unchanged */
+@media (min-width:769px){
+  .intro{
+    background:radial-gradient(ellipse at center, #f9f5ee 0%, #ece3d3 100%);
   }
+  
+  /* this is for desktop view */
+  .envelope-wrap{
+    height:150vh;              /* increased from 92vh */
+    max-height:3000px;        /* increased from 920px */
+    width:auto;
+    aspect-ratio:1024 / 1536;
+    max-width:3000px;          /* increased from 520px */
+    margin:0 auto;
+    overflow:visible;
+    border-radius:1px;
+  }
+
+  .seal-wrap{
+    bottom:10%;                 /* was 0% — that pushed it off/below the card */
+    width:60vw;
+    min-width:64px;
+    max-width:200px;
+    z-index:999;
+  }
+
+  .invite-text{
+    top:36%;                   /* was 33% and measured against the oversized card */
+    width:min(320px, 82vw);
+  }
+  .invite-date{
+    font-size:1rem;
+    letter-spacing:.18em;
+  }
+  .invite-names{
+    font-size:5rem;
+  }
+  .invite-tagline{
+    font-size:1rem;
+  }
+  .seal-btn{
+  top: 1500%;
+  position:relative;
+  width:100%;
+  height:100%;
+  border:0;
+  padding:0;
+  cursor:pointer;
+  border-radius:50%;
+  background:transparent;
+ }
+
+  .seal-hint{
+    font-size:.72rem;
+    margin-top:150px;
+  }
+
 }
+
 
 .invite-img{
   position:absolute;
@@ -1562,4 +1613,3 @@ body.find-reservation-page .seat-row{
   #home .hero-countdown .num  { font-size: .7rem !important; }
   #home .hero-countdown .label { font-size: .28rem !important; }
 }
-
