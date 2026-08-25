@@ -1048,6 +1048,14 @@ img{max-width:100%; display:block}
   filter: drop-shadow(0 0 1px rgba(255,255,255,.35));
 }
 
+.car-icon-img{
+  width: 44px;        /* adjust to match mockup */
+  height: auto;
+  display: block;
+  margin: 0 auto 6px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 1px rgba(255,255,255,.35));
+}
 /* End of Ceremony */
 
 /* Dress code */
