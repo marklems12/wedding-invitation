@@ -1040,7 +1040,7 @@ img{max-width:100%; display:block}
 }
 
 .pin-point-img{
-  width: 70px;        /* adjust to match mockup */
+  width: 100px;        /* adjust to match mockup */
   height: auto;
   display: block;
   margin: 0 auto 6px;
