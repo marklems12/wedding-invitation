@@ -169,7 +169,49 @@ img{max-width:100%; display:block}
   font-size:clamp(.9rem, 3.2vw, 1.15rem);
   color:#4f4741;
 }
+.seal-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));
+  transform-origin:center;
+  animation:sealPulse 2.2s ease-in-out infinite;
+  transition:filter .3s ease, transform .3s ease;
+}
 
+/* pause the idle pulse and give a distinct hover feedback */
+.seal-btn:hover .seal-img{
+  animation-play-state:paused;
+  transform:scale(1.12) rotate(-4deg);
+  filter:drop-shadow(0 8px 16px rgba(0,0,0,.35)) brightness(1.12);
+}
+
+.seal-btn:active .seal-img{
+  transform:scale(.95) rotate(0deg);
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,.3)) brightness(.95);
+}
+
+.seal-btn:focus-visible .seal-img{
+  outline:2px solid #8a5a20;
+  outline-offset:4px;
+  border-radius:50%;
+}
+
+@keyframes sealPulse{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.06); }
+}
+
+/* hint text reacts too, so hover feels connected to the whole element */
+.seal-hint{
+  transition:color .3s ease, transform .3s ease;
+}
+
+.seal-wrap:hover .seal-hint{
+  color:#8a5a20;
+  transform:translateX(-50%) scale(1.05);
+}
 
 @media (min-width:769px){
   .intro{
@@ -305,6 +347,7 @@ img{max-width:100%; display:block}
     font-size:1rem;
   }
 }
+
 
 
 /* =========================
