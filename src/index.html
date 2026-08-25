@@ -74,15 +74,15 @@
 
     </article>
 
-    <div class="section-divider parallax-layer" data-parallax-speed="1.18" aria-hidden="true">
+   <!--<div class="section-divider parallax-layer" data-parallax-speed="2.8" aria-hidden="true">
       <img src="./assets/images/favicon.png" alt="" />
       <img src="./assets/images/favicon.png" alt="" />
-    </div>
+    </div>-->
 
     <!-- CONTENT -->
-    <article class="card parallax-layer story-sketch" data-parallax-speed="0.06" id="our-story">
+    <article class="card parallax-layer story-sketch" data-parallax-speed="2.8" id="our-story">
   <div class="story-wrap">
-    <h2 class="story-title">BECOMING<br>#THELAUDES</h2>
+    <h2 class="story-title">BECOMING #THELAUDES</h2>
     <p class="muted story-sub">A glimpse of moments that led us here.</p>
 
     <!-- scrapbook row -->
@@ -184,18 +184,21 @@
       </div>
       </article>
 
-      <article class="card parallax-layer ceremony-sketch full-bleed" id="ceremony">
-      <div class="ceremony-content">
-        <figure class="venue-card">
-          <span class="sparkle sparkle-tl" aria-hidden="true">✦</span>
-          <img src="./assets/images/church.jpg" alt="San Antonio De Padua Church" />
-          <figcaption class="venue-caption">
-            <span class="venue-pin" aria-hidden="true">📍</span>
-            <span class="venue-info">
-              <span class="venue-name">San Antonio De Padua Church</span>
-              <span class="venue-location">SILANG, CAVITE</span>
-            </span>
-            <a
+<article id="ceremony" parallax-layer class="ceremony-sketch">
+  <div class="places-wrap">
+    <h2 class="places-title">TWO PLACES, ONE CELEBRATION</h2>
+
+    <div class="places-grid">
+      <!-- CEREMONY CARD -->
+      <article class="place-card">
+        <h3 class="place-type">CEREMONY</h3>
+        <div class="place-photo">
+          <img src="./assets/images/church.jpg" alt="San Antonio De Padua Church">
+        </div>
+        <div class="place-meta">
+          <p class="place-name">San Antonio De Padua Church</p>
+          <p class="place-loc">SILANG, CAVITE</p>
+          <a
               class="map-btn"
               href="https://www.google.com/maps/place/San+Antonio+de+Padua+Parish/@14.1916913,120.9899736,1129m/data=!3m2!1e3!4b1!4m6!3m5!1s0x33bd7c0265859361:0xa4a9b11e95646896!8m2!3d14.1916913!4d120.9925539!16s%2Fg%2F1hc4ljm34?entry=ttu&g_ep=EgoyMDI2MDgwOS4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
@@ -203,33 +206,37 @@
             >
               <span class="map-btn-icon" aria-hidden="true">🗺️</span> View Map
             </a>
-          </figcaption>
-          <span class="sparkle sparkle-br" aria-hidden="true">✦</span>
-        </figure>
-
-        <!-- connector between venues -->
-        <div class="venue-connector">
-          <p class="venue-distance">
-            <span class="pin-icon" aria-hidden="true">📍</span>
-            Approximately 5 km apart
-            <span class="sparkle-inline" aria-hidden="true">✦</span>
-          </p>
-          <p class="venue-traveltime">
-            <span class="car-icon" aria-hidden="true">🚗</span>
-            Around 10–20 minutes travel time
-            <span class="heart-inline" aria-hidden="true">♡</span>
-          </p>
         </div>
+      </article>
 
-        <figure class="venue-card">
-          <img src="./assets/images/reception.jpg" alt="Farmhills Garden" />
-          <figcaption class="venue-caption">
-            <span class="venue-pin" aria-hidden="true">📍</span>
-            <span class="venue-info">
-              <span class="venue-name">Farmhills Garden</span>
-              <span class="venue-location">TAGAYTAY</span>
-            </span>
-            <a
+      <!-- CENTER CONNECTOR -->
+      <div class="places-connector">
+        <div class="pin pin-a">📍</div>
+        <svg class="connector-line" viewBox="0 0 120 180" aria-hidden="true">
+          <path d="M25 15 C 95 35, 95 95, 38 118 C 15 128, 15 150, 45 170"
+                fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"
+                stroke-linecap="round" stroke-dasharray="5 6"/>
+        </svg>
+        <div class="pin pin-b">📍</div>
+
+        <div class="connector-info">
+          <div class="car">🚗</div>
+          <div class="dist">5 km</div>
+          <div class="time">10–15 MINUTES<br>BY CAR</div>
+        </div>
+      </div>
+
+      <!-- RECEPTION CARD -->
+      <article class="place-card">
+        <h3 class="place-type">RECEPTION</h3>
+        <div class="place-photo">
+          <img src="./assets/images/reception.jpg" alt="Farm Hills Garden">
+        </div>
+        
+        <div class="place-meta">
+          <p class="place-name">Farm Hills Garden</p>
+          <p class="place-loc">SILANG, CAVITE</p>
+           <a
               class="map-btn"
               href="https://www.google.com/maps/place/Farm+Hills+Garden+Tagaytay+Events+Venue/@14.149199,120.9853822,1129m/data=!3m2!1e3!4b1!4m6!3m5!1s0x33bd7975679e703b:0x8dfb5dedc66057f5!8m2!3d14.149199!4d120.9853822!16s%2Fg%2F11gnq7z1sp?entry=ttu&g_ep=EgoyMDI2MDgwOS4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
@@ -237,10 +244,18 @@
             >
               <span class="map-btn-icon" aria-hidden="true">🗺️</span> View Map
             </a>
-          </figcaption>
-        </figure>
-      </div>
-    </article>
+        </div>
+      </article>
+    </div>
+
+    <p class="places-note-title">Before You Hit the Road:</p>
+    <p class="places-note">
+      Weekend traffic along Tagaytay-Sta. Rosa Road can be a little extra.
+      We recommend leaving a little earlier so you can beat the traffic, make it on time,
+      and arrive relaxed and ready to celebrate!
+    </p>
+  </div>
+</article>
           
       <article class="card parallax-layer dresscode-sketch full-bleed" id="dresscode">
         <div class="dresscode-content">
