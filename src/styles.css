@@ -334,6 +334,12 @@ img{max-width:100%; display:block}
   object-fit:contain;
   display:block;
   filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));
+  animation: sealSpin 4s linear infinite; /* continuous rotate */
+}
+
+@keyframes sealSpin{
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 @media (max-width:480px){
