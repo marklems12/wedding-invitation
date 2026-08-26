@@ -1127,7 +1127,7 @@ img{max-width:100%; display:block}
 /* image version of order of events */
 #order-of-events .events-content{
   width:min(980px, 100%);
-  margin:0 auto;
+  margin:-105px;
   text-align:center;
 }
 
@@ -1839,6 +1839,15 @@ body.find-reservation-page .seat-row{
   font-weight: 500;
   font-size: clamp(.95rem, .80vw, 2.1rem);
   color: #6e2338;
+}
+
+#entourage .ent-block h4{
+  margin: 0 0 2px;
+  letter-spacing: .05em;
+  font-weight: 500;
+  font-size: clamp(.95rem, .80vw, 2.1rem);
+  color: #6e2338;
+  align-items: center;
 }
 
 #entourage .ent-block p{
