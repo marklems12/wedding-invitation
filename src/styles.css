@@ -534,17 +534,6 @@ img{max-width:100%; display:block}
 }
 .muted{color:var(--muted)}
 
-
-.section-divider{
-  width:100%; display:flex; justify-content:center; align-items:center;
-  background:#fff; padding:3px 0 3px;
-}
-.section-divider img{
-  width:min(30px, 26vw); height:auto; display:block; opacity:.95;
-}
-
-
-
 /* Utility */
 .full-bleed{
   width:100vw !important;
@@ -797,6 +786,7 @@ img{max-width:100%; display:block}
 }
 
 /* End of Story section */
+
 /* ===== CEREMONY REDESIGN: rounded photo cards + connector ===== */
 /* ===== TWO PLACES SECTION (new design) ===== */
 /* =========================
@@ -1070,41 +1060,43 @@ img{max-width:100%; display:block}
 /* ===== DRESS CODE redesign (keep existing bg) ===== */
 #dresscode.dresscode-sketch{
   margin:0 !important;
+  margin-bottom: -29px !important;
   width:100vw !important;
   max-width:100vw !important;
   margin-left:calc(50% - 50vw) !important;
   margin-right:calc(50% - 50vw) !important;
-
-  /* keep your existing BG as requested */
-  background:url("./assets/images/dresscode-bg.png") top center / cover no-repeat !important;
-
+  background:#ecd3b4 !important;
+  padding:28px 14px 40px !important; /* no negative padding */
   min-height:auto !important;
-  padding:78px 16px 70px !important;
+  display:block !important; /* remove flex centering */
 }
+
+
 
 #dresscode .dresscode-content{
-  width:min(860px, 95%);
-  margin:0 auto;
+  width:min(560px, 92%);
+  margin:0 auto !important;  /* remove negative margin */
   text-align:center;
-  color:#2f2f2f;
 }
 
+
 #dresscode .dresscode-title{
-  margin:0 0 10px;
-  margin-top:60px;
-  margin-bottom:-40px;
+  text-align: center;
   font-family:"Comico", sans-serif;
   font-weight:500;
   letter-spacing:.02em;
-  font-size:clamp(2.2rem, 3vw, 5rem);
+  font-size:clamp(2.2rem, 2vw, 5rem);
   line-height:.95;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+  transform: translateY(-6px);    /* nudge title upward */
 }
 
 #dresscode .dresscode-figures{
   margin:0 auto 14px;
 }
 #dresscode .dresscode-figures img{
-  width:min(300px, 88%);
+  width: min(190px, 54vw) !important;
   height:auto;
   display:block;
   margin:0 auto;
@@ -1112,20 +1104,20 @@ img{max-width:100%; display:block}
 }
 
 #dresscode .dresscode-formal{
-  margin:8px 0 8px;
+  margin:8px 0 4px;
   font-weight:800;
   letter-spacing:.14em;
-  font-size:clamp(1.35rem, 1vw, 3rem);
+  font-size:clamp(.80rem, 1vw, 1rem);
   color:#222;
 }
 
 #dresscode .dresscode-note{
   margin:0 auto 20px;
   max-width:760px;
-  text-transform:uppercase;
+  text-transform:lowercase;
   letter-spacing:.08em;
   line-height:1.35;
-  font-size:clamp(.95rem, .80vw, 1.9rem);
+  font-size:clamp(.95rem, .80vw, 1rem);
   color:#333;
 }
 
@@ -1139,7 +1131,7 @@ img{max-width:100%; display:block}
 }
 
 #dresscode .dress-palette span{
-  width:clamp(20px, 8vw, 60px);
+  width:clamp(54px, 11vw, 150px);
   aspect-ratio:1/1;
   border-radius:999px;
   background:var(--c);
@@ -1150,20 +1142,34 @@ img{max-width:100%; display:block}
   margin-left:0;
 }
 
+/* smaller dress code colors */
+#dresscode .palette-group .dress-palette span{
+  width: 86px !important;   /* was too wide */
+  height: 54px !important;  /* reduce height too */
+  border-radius: 999px;
+
+}
+
 @media (max-width:768px){
+  #dresscode .dresscode-title{
+    margin-top: -80px !important;
+    margin-bottom: -10px !important;
+  }
   #dresscode.dresscode-sketch{
-    padding:56px 12px 50px !important;
+    min-height:auto !important;
+    padding:20px 12px 40px !important; /* top right bottom */
   }
 
   #dresscode .dresscode-figures img{
     width:min(320px, 92%);
   }
 
-  #dresscode .dress-palette span{
-    width:56px;
-    margin-left:-8px;
+  #dresscode .palette-group .dress-palette span{
+    width: 64px !important;
+    height: 42px !important;
   }
-}
+} 
+
 
 .dresscode-groups{
   display:grid;
@@ -1190,6 +1196,10 @@ img{max-width:100%; display:block}
   background:var(--c);
   border:1px solid rgba(0,0,0,.08);
 }
+
+
+/* end of Dress Code section */
+
 /* Events */
 
 #order-of-events.events-sketch{
@@ -1201,6 +1211,7 @@ img{max-width:100%; display:block}
 }
 #order-of-events .events-content{
   width:min(560px,92%); margin:0 auto; text-align:center;
+  margin:-105px;
 }
 #order-of-events .events-title{
   margin:100px 0 28px;
@@ -1529,6 +1540,7 @@ body.find-reservation-page .seat-row{
   #dresscode.dresscode-sketch{
     min-height:85vh;
     padding:120px 12px 110px !important;
+
   }
   .venue-caption{
     flex-direction:column;
