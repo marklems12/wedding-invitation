@@ -842,11 +842,13 @@ img{max-width:100%; display:block}
   background: #c48e91 !important; /* dusty rose */
   padding: 24px 14px 40px !important;
   min-height: auto !important;
+  padding-bottom: 40px !important;
 }
 
 #ceremony .places-wrap{
   width: min(980px, 100%);
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 #ceremony .places-title{
@@ -862,22 +864,20 @@ img{max-width:100%; display:block}
 
 /* optional note */
 #ceremony .places-note-title{
-  margin: 12px 0 6px;
+  padding-top: 30px;
+  margin-top: 70px;
+  margin: 0 0 0px;
   text-align: center;
   color: #fff;
 }
 #ceremony .places-note{
-  margin: 0 auto;
+  margin: 20px auto;
+  margin-bottom: 60px;
   width: min(96%, 760px);
   text-align: center;
   color: rgba(255,255,255,.95);
   line-height: 1.4;
-  font-size: .95rem;
-  font-family: url("./assets/fonts/Pally-Regular.woff2") format("woff2"),
-      url("./assets/fonts/Pally-Regular.woff") format("woff"),
-      url("./assets/fonts/Pally-Regular.ttf") format("truetype"),
-      url("./assets/fonts/Pally-Medium.woff") format("woff"),
-      serif;
+  font-size: .80rem;
 }
 
 /* stack layout (mobile first) */
