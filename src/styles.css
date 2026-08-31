@@ -642,6 +642,46 @@ img{max-width:100%; display:block}
   margin:0; font-size:.78rem; line-height:1.35; color:#3f3a37; max-width:190px;
 }
 
+/* base icon animation */
+.know-item .icon-wrap img{
+  transition: transform .35s ease, filter .35s ease;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* hover/tap lift */
+.know-item:hover .icon-wrap img{
+  transform: translateY(-4px) scale(1.06) rotate(-2deg);
+  filter: drop-shadow(0 8px 10px rgba(0,0,0,.12));
+}
+
+/* gentle floating loop */
+.know-item .icon-wrap img{
+  animation: iconFloat 2.2s ease-in-out infinite;
+}
+
+/* stagger each icon so they don't move in sync */
+.know-item:nth-child(2) .icon-wrap img{ animation-delay: .2s; }
+.know-item:nth-child(3) .icon-wrap img{ animation-delay: .4s; }
+.know-item:nth-child(4) .icon-wrap img{ animation-delay: .6s; }
+.know-item:nth-child(5) .icon-wrap img{ animation-delay: .8s; }
+.know-item:nth-child(6) .icon-wrap img{ animation-delay: 1s; }
+.know-item:nth-child(7) .icon-wrap img{ animation-delay: 1.2s; }
+.know-item:nth-child(8) .icon-wrap img{ animation-delay: 1.4s; }
+
+@keyframes iconFloat{
+  0%,100%{ transform: translateY(0) rotate(0deg); }
+  50%{ transform: translateY(-5px) rotate(1.2deg); }
+}
+
+/* accessibility: reduce motion support */
+@media (prefers-reduced-motion: reduce){
+  .know-item .icon-wrap img{
+    animation:none !important;
+    transition:none !important;
+  }
+}
+
 /* mobile: keep 2 columns, tighten gap and icon size */
 @media (max-width: 640px){
   .know-icons{
