@@ -928,7 +928,6 @@ img{max-width:100%; display:block}
   padding: 6px 12px;
   text-align: center;
   color: #faf8f8;
-  text-transform: uppercase;
   letter-spacing: .08em;
   font-size: clamp(.85rem, 2.5vw, 1.05rem);
   background: #c48e91; /* white */
@@ -949,10 +948,13 @@ img{max-width:100%; display:block}
 #ceremony .place-name{
   margin: 0;
   color: #5b3b3d;
-  font-family: "Cormorant Garamond", serif;
   font-style: italic;
   font-size: clamp( 1rem, .50vw, .50rem);
   line-height: 1.05;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 #ceremony .place-loc{
