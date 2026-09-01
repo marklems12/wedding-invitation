@@ -1198,7 +1198,7 @@ img{max-width:100%; display:block}
   text-transform:lowercase;
   letter-spacing:.08em;
   line-height:1.35;
-  font-size:clamp(.95rem, .80vw, 1rem);
+  font-size: .80rem;
   color:#333;
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
