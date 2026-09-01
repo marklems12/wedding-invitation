@@ -162,6 +162,10 @@ img{max-width:100%; display:block}
   text-transform:uppercase;
   letter-spacing:.22em;
   font-size:clamp(1rem, 1vw, 1.05rem);
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
 }
 .invite-names{
   margin: 0 0 50px;
@@ -182,6 +186,10 @@ img{max-width:100%; display:block}
   margin:0;
   font-size:clamp(.9rem, 3.2vw, 1.15rem);
   color:#4f4741;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 .seal-img{
   width:100%;
@@ -639,7 +647,10 @@ img{max-width:100%; display:block}
   width:100%; height:100%; object-fit:contain; object-position:center; display:block;
 }
 .know-item p,.know-item figcaption{
-  margin:0; font-size:.78rem; line-height:1.35; color:#3f3a37; max-width:190px;
+  margin:0; font-size:.78rem; line-height:1.35; color:#3f3a37; max-width:190px;font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 /* base icon animation */
@@ -720,6 +731,10 @@ img{max-width:100%; display:block}
 
 #our-story .story-sub{
   margin-bottom:28px;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 /* scrapbook layout */
@@ -802,6 +817,10 @@ img{max-width:100%; display:block}
   color:#51353b;
   font-size:.95rem;
   letter-spacing:.02em;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 /* mobile */
@@ -869,6 +888,10 @@ img{max-width:100%; display:block}
   margin: 0 0 0px;
   text-align: center;
   color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 #ceremony .places-note{
   margin: 20px auto;
@@ -878,6 +901,10 @@ img{max-width:100%; display:block}
   color: rgba(255,255,255,.95);
   line-height: 1.4;
   font-size: .80rem;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 /* stack layout (mobile first) */
@@ -960,7 +987,6 @@ img{max-width:100%; display:block}
   width: 100% !important;
   margin: 2px auto 0 !important;
   text-align: center !important;
-  font-family:"Cormorant Garamond", serif;
   color:#f1eaea;
 }
 
@@ -990,23 +1016,32 @@ img{max-width:100%; display:block}
 #ceremony .route-info .approx{
   margin-top: 2px;
   letter-spacing: .12em;
-  text-transform: uppercase;
   font-size: .8rem;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 #ceremony .route-info .dist{
   margin-top: 2px;
-  font-family: "Cormorant Garamond", serif;
   font-size: 3.2rem;
   line-height: .9;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 #ceremony .route-info .time{
   margin-top: 2px;
   letter-spacing: .09em;
-  text-transform: uppercase;
   font-size: 1rem;
   line-height: 1.2;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 
@@ -1149,6 +1184,10 @@ img{max-width:100%; display:block}
   letter-spacing:.14em;
   font-size:clamp(.80rem, 1vw, 1rem);
   color:#222;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 #dresscode .dresscode-note{
@@ -1159,6 +1198,10 @@ img{max-width:100%; display:block}
   line-height:1.35;
   font-size:clamp(.95rem, .80vw, 1rem);
   color:#333;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 #dresscode .dress-palette{
@@ -1383,6 +1426,10 @@ img{max-width:100%; display:block}
   letter-spacing:.10em;
   color:#2f2f2f;
   font-size:clamp(.84rem,2vw,1.1rem);
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 #rsvp .rsvp-cta-btn{
   display:inline-flex; align-items:center; justify-content:center;
@@ -1397,6 +1444,10 @@ img{max-width:100%; display:block}
 #rsvp .rsvp-cta-deadline{
   margin:18px 0 0; text-transform:uppercase; letter-spacing:.08em;
   color:#2e2e2e; font-size:clamp(.9rem,2vw,1.3rem);
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 /* Reveal */
@@ -1683,11 +1734,19 @@ body.find-reservation-page .seat-row{
 #faq .faq-item summary{
   color:#6f2432 !important;
   font-weight:700 !important;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 #faq .faq-item p{
   color:#4a3a33 !important;
   margin:8px 0 0 !important;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 /* ensure RSVP isn't covering FAQ */
@@ -1939,6 +1998,10 @@ body.find-reservation-page .seat-row{
   line-height: 1.65;
   font-size: clamp(.98rem, 2vw, 1.1rem);
   max-width: 720px;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 @media (max-width: 768px){
@@ -1991,6 +2054,10 @@ body.find-reservation-page .seat-row{
   font-weight: 500;
   font-size: clamp(.95rem, .80vw, 2.1rem);
   color: #6e2338;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 #entourage .ent-block h4{
@@ -2008,6 +2075,10 @@ body.find-reservation-page .seat-row{
   font-size: clamp(.80rem, .30vw, 1.75rem);
   line-height: 1.35;
   color: #64544b;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 /* two-column rows */
