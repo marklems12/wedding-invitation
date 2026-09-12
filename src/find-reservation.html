@@ -29,30 +29,38 @@
 
       <form class="rsvp-form" id="rsvpForm" style="display:none;">
         <label>
-            Guest Name
-            <input type="text" id="guestName" readonly />
+          Guest Name
+          <input type="text" id="guestName" readonly />
         </label>
 
         <label>
-            Reserved Seats (Additional Companion)
-            <input type="number" id="reservedSeats" readonly />
+          Reserved Seats (Additional Companion)
+          <input type="number" id="reservedSeats" readonly />
         </label>
 
         <div id="seatListWrap" class="seat-list-wrap"></div>
         <button type="submit" class="submit-btn">Submit</button>
-        </form>
+      </form>
 
-        <p id="rsvpResult" class="muted"></p>
-<!-- Removed duplicate closing form tag -->
+      <p id="rsvpResult" class="muted"></p>
 
       <a href="./index.html#rsvp" class="back-link">← Back to invitation</a>
     </section>
 
     <section class="find-reservation-illustration" aria-hidden="true">
-        <img src="./assets/images/faq-bg.png" alt="" />
+      <img src="./assets/images/faq-bg.png" alt="" />
     </section>
-    
   </main>
+
+  <!-- RSVP Result Popup Modal -->
+  <div id="rsvpModal" class="rsvp-modal" aria-hidden="true">
+    <div class="rsvp-modal-backdrop" data-close="1"></div>
+    <div class="rsvp-modal-card" role="dialog" aria-modal="true" aria-labelledby="rsvpModalTitle">
+      <h3 id="rsvpModalTitle">RSVP Status</h3>
+      <p id="rsvpModalMessage"></p>
+      <button type="button" id="rsvpModalOkBtn">OK</button>
+    </div>
+  </div>
 
   <script src="./assets/js/main.js" defer></script>
 </body>

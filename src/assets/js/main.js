@@ -33,7 +33,12 @@
   const guestName = document.getElementById("guestName");
   const reservedSeats = document.getElementById("reservedSeats");
   const seatListWrap = document.getElementById("seatListWrap");
-  const rsvpResult = document.getElementById("rsvpResult");
+  const rsvpResult = document.getElementById("rsvpResult"); // fallback only
+
+  // RSVP modal refs
+  const rsvpModal = document.getElementById("rsvpModal");
+  const rsvpModalMessage = document.getElementById("rsvpModalMessage");
+  const rsvpModalOkBtn = document.getElementById("rsvpModalOkBtn");
 
   const targetDate = new Date(WEDDING_DATE);
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -73,7 +78,74 @@
     return `${API_URL}?${qp.toString()}`;
   }
 
+  function resetRsvpUi() {
+    currentGuest = null;
+    currentCode = "";
+
+    if (rsvpForm) rsvpForm.style.display = "none";
+    if (guestName) guestName.value = "";
+    if (reservedSeats) reservedSeats.value = "";
+    if (seatListWrap) seatListWrap.innerHTML = "";
+
+    if (guestSearchInput) guestSearchInput.value = "";
+    if (rsvpCodeInput) rsvpCodeInput.value = "";
+
+    safeSetText(lookupMsg, "");
+    safeSetText(rsvpResult, "");
+  }
+
+  // ==============================
+  // RSVP modal helpers
+  // ==============================
+  function showRsvpPopup(message) {
+    if (!rsvpModal || !rsvpModalMessage) {
+      // fallback if modal is missing
+      safeSetText(rsvpResult, message || "");
+      return;
+    }
+    rsvpModalMessage.textContent = message || "";
+    rsvpModal.classList.add("show");
+    rsvpModal.setAttribute("aria-hidden", "false");
+  }
+
+  function hideRsvpPopup() {
+    if (!rsvpModal) return;
+    rsvpModal.classList.remove("show");
+    rsvpModal.setAttribute("aria-hidden", "true");
+  }
+
+  function initRsvpModal() {
+    if (!rsvpModal) return;
+
+    // Close when clicking backdrop
+    rsvpModal.addEventListener("click", (e) => {
+      if (e.target && e.target.dataset && e.target.dataset.close === "1") {
+        hideRsvpPopup();
+      }
+    });
+
+    // Close via OK button
+    if (rsvpModalOkBtn) {
+      rsvpModalOkBtn.addEventListener("click", () => {
+        const shouldReset = rsvpModalOkBtn.getAttribute("data-reset") === "1";
+        hideRsvpPopup();
+
+        if (shouldReset) {
+          resetRsvpUi();
+          rsvpModalOkBtn.removeAttribute("data-reset");
+        }
+      });
+    }
+
+    // Close via Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") hideRsvpPopup();
+    });
+  }
+
+  // ==============================
   // Robust JSONP for Apps Script
+  // ==============================
   function jsonp(url, timeoutMs = 15000) {
     return new Promise((resolve, reject) => {
       const cb = `cb_${Date.now()}_${Math.floor(Math.random() * 100000)}`;
@@ -113,6 +185,7 @@
       const sep = url.includes("?") ? "&" : "?";
       script.src = `${url}${sep}callback=${encodeURIComponent(cb)}`;
       script.async = true;
+      script.referrerPolicy = "no-referrer";
       document.body.appendChild(script);
     });
   }
@@ -297,7 +370,7 @@
         if (reservedSeats) reservedSeats.value = currentGuest?.seats ?? "";
         renderSeatRows(currentGuest?.seat_list || []);
 
-        safeSetText(lookupMsg, `Reservation found.`);
+        safeSetText(lookupMsg, "Reservation found.");
         if (rsvpForm) rsvpForm.style.display = "grid";
       } catch (err) {
         console.error("FIND ERROR:", err);
@@ -310,19 +383,22 @@
       e.preventDefault();
 
       if (!currentGuest) {
-        safeSetText(rsvpResult, "Please search your reservation first.");
+        rsvpModalOkBtn?.removeAttribute("data-reset");
+        showRsvpPopup("Please search your reservation first.");
         return;
       }
 
       const selects = Array.from(rsvpForm.querySelectorAll(".seat-status"));
       if (!selects.length) {
-        safeSetText(rsvpResult, "No seat rows found.");
+        rsvpModalOkBtn?.removeAttribute("data-reset");
+        showRsvpPopup("No seat rows found.");
         return;
       }
 
       const statuses = selects.map((s) => (s.value || "").trim());
       if (statuses.some((v) => !v)) {
-        safeSetText(rsvpResult, "Please select status for all attendees.");
+        rsvpModalOkBtn?.removeAttribute("data-reset");
+        showRsvpPopup("Please select status for all attendees.");
         return;
       }
 
@@ -340,17 +416,23 @@
         if (data && data.ok) {
           const attending = data.totals?.attending ?? 0;
           const unable = data.totals?.unable ?? 0;
-          safeSetText(
-            rsvpResult,
-            `Thank you, ${currentGuest.name}. Your RSVP has been recorded. Attending: ${attending}, Unable to Attend: ${unable}.`
+
+          // success popup should reset form when user presses OK
+          rsvpModalOkBtn?.setAttribute("data-reset", "1");
+
+          showRsvpPopup(
+            `Thank you, ${currentGuest.name}. Your RSVP has been recorded. Attending: ${attending}, Unable to Attend: ${unable}.\nIn case of any changes, please contact Mark & Alexia.`
           );
+          safeSetText(rsvpResult, "");
         } else {
-          safeSetText(rsvpResult, data?.message || "Submission failed.");
+          rsvpModalOkBtn?.removeAttribute("data-reset");
+          showRsvpPopup(data?.message || "Submission failed.");
           console.log("SUBMIT RESPONSE:", data);
         }
       } catch (err) {
         console.error("SUBMIT ERROR:", err);
-        safeSetText(rsvpResult, "Submission failed. Please try again.");
+        rsvpModalOkBtn?.removeAttribute("data-reset");
+        showRsvpPopup("Submission failed. Please try again.");
       }
     });
   }
@@ -367,6 +449,8 @@
 
     initReveal();
     initParallax();
+
+    initRsvpModal();
     initRsvp();
   }
 
@@ -375,5 +459,4 @@
   } else {
     init();
   }
-  
 })();
