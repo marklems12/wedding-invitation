@@ -719,38 +719,6 @@ img{max-width:100%; display:block}
   font-style: normal;
 }
 
-/* base icon animation */
-.know-item .icon-wrap img{
-  transition: transform .35s ease, filter .35s ease;
-  transform-origin: center;
-  will-change: transform;
-}
-
-/* hover/tap lift */
-.know-item:hover .icon-wrap img{
-  transform: translateY(-4px) scale(1.06) rotate(-2deg);
-  filter: drop-shadow(0 8px 10px rgba(0,0,0,.12));
-}
-
-/* gentle floating loop */
-.know-item .icon-wrap img{
-  animation: iconFloat 2.2s ease-in-out infinite;
-}
-
-/* stagger each icon so they don't move in sync */
-.know-item:nth-child(2) .icon-wrap img{ animation-delay: .2s; }
-.know-item:nth-child(3) .icon-wrap img{ animation-delay: .4s; }
-.know-item:nth-child(4) .icon-wrap img{ animation-delay: .6s; }
-.know-item:nth-child(5) .icon-wrap img{ animation-delay: .8s; }
-.know-item:nth-child(6) .icon-wrap img{ animation-delay: 1s; }
-.know-item:nth-child(7) .icon-wrap img{ animation-delay: 1.2s; }
-.know-item:nth-child(8) .icon-wrap img{ animation-delay: 1.4s; }
-
-@keyframes iconFloat{
-  0%,100%{ transform: translateY(0) rotate(0deg); }
-  50%{ transform: translateY(-5px) rotate(1.2deg); }
-}
-
 /* accessibility: reduce motion support */
 @media (prefers-reduced-motion: reduce){
   .know-item .icon-wrap img{
@@ -794,7 +762,7 @@ img{max-width:100%; display:block}
   }
 }
 
-/* ===== OUR STORY REFRESH ===== */
+/* ===== Our Moments REFRESH ===== */
 
 /* #our-story.story-sketch{
   background:#d9c4c7 !important;  dusty rose - fits your motif 
@@ -937,6 +905,42 @@ img{max-width:100%; display:block}
   }
 }
 
+/* Two filmstrips on the left; letter on the right */
+#our-story .story-board {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items: start;
+}
+
+#our-story .story-filmstrip:first-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#our-story .story-filmstrip:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#our-story .story-letter {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+@media (max-width: 820px) {
+  #our-story .story-board {
+    grid-template-columns: 1fr;
+  }
+
+  #our-story .story-filmstrip,
+  #our-story .story-letter {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+/* End of Moments section */
+
+
+/* Our Story with Icons */
 /* 3-column grid (desktop) */
 .know-icons{
   display:grid;
@@ -959,7 +963,7 @@ img{max-width:100%; display:block}
   height:auto;
 }
 
-/* End of Story section */
+/* End of Story section with Icons */
 
 /* ===== CEREMONY REDESIGN: rounded photo cards + connector ===== */
 /* ===== TWO PLACES SECTION (new design) ===== */
