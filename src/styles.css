@@ -922,10 +922,14 @@ img{max-width:100%; display:block}
     grid-template-columns: 1fr;
   }
 
-  #our-story .story-filmstrips,
   #our-story .story-letter {
     grid-column: 1;
-    grid-row: auto;
+    grid-row: 1;
+  }
+
+  #our-story .story-filmstrips {
+    grid-column: 1;
+    grid-row: 2;
   }
 }
 /* End of Moments section */
