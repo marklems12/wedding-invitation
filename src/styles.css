@@ -2292,3 +2292,7 @@ body.find-reservation-page .seat-row{
     height: 100%;
   }
 }
+/* Outer background of the Wedding Timeline section */
+#order-of-events.events-sketch {
+  background: #F7F4EE;
+}
